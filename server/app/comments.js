@@ -4,7 +4,7 @@ const router = express.Router();
 
 const createRouter = (db) => {
     router.get('/', (req, res) => {
-        db.query('SELECT * FROM comments', function (error, results) {
+        db.query('SELECT `author`, `comment` * FROM comments', function (error, results) {
             if (error) throw error;
 
             res.send(results);
@@ -17,7 +17,7 @@ const createRouter = (db) => {
         db.query(
             'INSERT INTO comments (author, comment) ' +
             'VALUES (?, ?)',
-            [comments.title, comments.description],
+            [comments.title, comments.content],
             (error, results) => {
                 if (error) throw error;
 

@@ -20,7 +20,7 @@ const router = express.Router();
 
 const createRouter = (db) => {
     router.get('/', (req, res) => {
-        db.query('SELECT `id`, `title` FROM Subject matter', function (error, results) {
+        db.query('SELECT `id`, `title`, `content`, `image`, `date`  FROM news', function (error, results) {
             if (error) throw error;
 
             res.send(results);
@@ -28,23 +28,23 @@ const createRouter = (db) => {
     });
 
     router.post('/', upload.single('image'), (req, res) => {
-        const item = req.body;
+        const newNews = req.body;
 
         if (req.file) {
-            item.image = req.file.filename;
+            newNews.image = req.file.filename;
         } else {
-            item.image = null;
+            newNews.image = null;
         }
 
         db.query(
-            'INSERT INTO Subject matter (title, location_id, description, image, category_id, `date' +
-            ' registration`) ' +
-            'VALUES (?, ?, ?, ?, ?, ?)',
-            [item.title, 1, item.description, item.image, 1, 1212],
+            'INSERT INTO news (`title`, `content`, `image`) ' +
+             +
+            'VALUES (?, ?, ?)',
+            [newNews.title, 1, newNews.content, newNews.image],
             (error, results) => {
                 if (error) throw error;
 
-                item.id = results.insertId;
+                newNews.id = results.insertId;
                 res.send(item);
             }
         );

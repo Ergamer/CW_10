@@ -1,3 +1,4 @@
+import {FETCH_POST_ERROR, FETCH_POST_POST, FETCH_POST_REQUEST, FETCH_POST_SUCCESS} from "./actions";
 
 
 const initialState = {

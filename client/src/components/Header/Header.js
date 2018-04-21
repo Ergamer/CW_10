@@ -9,8 +9,8 @@ class Header extends Component {
             <div className="Header">
                 <h1>News</h1>
                 <div className="Header-Links">
-                    <NavLink to="/pages/contacts">Posts</NavLink>
-                    <NavLink to="/pages/creator" exact>Add new post</NavLink>
+                    <NavLink to="/pages/posts">Posts</NavLink>
+                    <NavLink to="/pages/add" exact>Add new post</NavLink>
                 </div>
             </div>
         )

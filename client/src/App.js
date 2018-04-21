@@ -12,8 +12,8 @@ class App extends Component {
             <div className="App">
                 <Header/>
                 <Switch>
-                    <Route path="/pages/contacts" exact component={AllPosts}/>
-                    <Route path="/pages/:id" exact component={PostCreator}/>
+                    <Route path="/pages/posts" exact component={AllPosts}/>
+                    <Route path="/pages/add" exact component={PostCreator}/>
                 </Switch>
             </div>
         );
