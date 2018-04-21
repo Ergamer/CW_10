@@ -18,9 +18,9 @@ class AllPosts extends Component {
             <div className="AllPosts">
                 {this.props.posts.map((post) => {
                     return (<OnePost
-                        title={this.props.title}
-                        content={this.props.content}
-                        image={'http://localhost:8000/uploads/' + this.props.image}
+                        title={post.title}
+                        content={post.content}
+                        image={'http://localhost:8000/uploads/' + post.image}
                     />)
                 })}
             </div>
