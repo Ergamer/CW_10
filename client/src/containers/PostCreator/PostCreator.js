@@ -9,7 +9,8 @@ class PostCreator extends Component {
     state = {
         title: '',
         content: '',
-        image: ''
+        image: '',
+        date: ''
     };
 
 
@@ -27,7 +28,7 @@ class PostCreator extends Component {
                     onChange={this.contactValueChanged}
                     type="text"/>
                 </div>
-                <div>Content<input
+                <div>Content<textarea
                     value={this.state.content}
                     onChange={this.contactValueChanged}
                     name="content"
